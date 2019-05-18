@@ -12,10 +12,12 @@
 default: &default
   adapter: mysql2
   encoding: utf8
+  reconnect: false
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
   password:
   socket: /tmp/mysql.sock
+  host: localhost
 
 development:
   <<: *default
@@ -49,6 +51,6 @@ test:
 #
 production:
   <<: *default
-  database: consultant_fp_production
-  username: consultant_fp
-  password: <%= ENV['CONSULTANT_FP_DATABASE_PASSWORD'] %>
+  database: heroku_614f43082b9e5ca
+  username: bc117c27b9886a
+  password: <%= ENV['DATABASE_PASSWORD'] %>
