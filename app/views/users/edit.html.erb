@@ -1,7 +1,10 @@
 <h1>ユーザー編集画面</h1>
 
-<%= form_for(@user) do |f| %>
+<%= form_for(@user, url: edit_path) do |f| %>
+  <%= render 'shared/error' %>
   <%= f.label :name %>
   <%= f.text_field :name %>
+  <%= f.label :email %>
+  <%= f.email_field :email %>
   <%= f.submit "編集する" %>
 <% end %>

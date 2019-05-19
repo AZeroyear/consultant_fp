@@ -19,7 +19,13 @@ class UsersController < ApplicationController
   end
 
   def update
-
+    @user = current_user
+    if @user.update(user_params)
+      flash[:alert] = "更新されました。"
+      redirect_to root_url
+    else
+      render 'edit'
+    end
   end
 
   private

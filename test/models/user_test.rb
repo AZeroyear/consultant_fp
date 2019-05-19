@@ -25,4 +25,9 @@ class UserTest < ActiveSupport::TestCase
     assert_not duplicate_user.valid?
   end
 
+  test "fp should be false" do
+    @user.save
+    assert_equal false, @user.fp
+  end
+
 end
