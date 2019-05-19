@@ -1,8 +1,7 @@
 ja:
   activerecord:
     models:
-      users: ユーザー
-      name: 名前
+      event: イベント
     attributes:
-      users:
+      event:
         name: 名前

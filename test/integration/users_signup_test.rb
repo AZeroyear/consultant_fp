@@ -3,7 +3,7 @@ require 'test_helper'
 class UsersSignupTest < ActionDispatch::IntegrationTest
 
   def setup
-    @user = User.create(name: "Example User")
+    @user = User.create(name: "Example User", email: "example@example.com")
   end
 
   test "Invalid signup information" do
@@ -16,7 +16,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
 
   test "login with valid information followed by logout" do
     get login_path
-    post login_path, params: { session: { name: @user.name} }
+    post login_path, params: { session: { email: @user.name} }
     assert is_logged_in?
     assert_redirected_to root_url
     delete logout_path
