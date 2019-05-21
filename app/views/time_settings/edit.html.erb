@@ -1,0 +1,18 @@
+
+<%= form_tag timesettings_path, method: :patch do %>
+  <table border="1" width="500" cellspacing="0" cellpadding="5" bordercolor="#000">
+    <tr><th>曜日</th><th>時間間隔</th><th>開始時間</th><th>終了時間</th><th>出勤</th></tr>
+  <% @time_settings.each do |setting| %>
+    <%= fields_for "setting[]", setting do |set| %>
+      <tr>
+      <td><%= week set.object.week %></td>
+      <td><%= set.number_field :interval %></td>
+      <td><%= set.time_field :start %></td>
+      <td><%= set.time_field :end %></td>
+      <td><%= set.check_box :workday %></td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>
+  <%= submit_tag %>
+<% end %>

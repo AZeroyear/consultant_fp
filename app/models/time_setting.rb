@@ -1,0 +1,2 @@
+class TimeSetting < ApplicationRecord
+end

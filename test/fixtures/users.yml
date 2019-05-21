@@ -1,7 +1,10 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
+fp_user:
   name: MyString
+  email: mystring@string.com
+  fp: true
 
-two:
+user:
   name: MyString2
+  email: mystring2@string.com
+  fp: false

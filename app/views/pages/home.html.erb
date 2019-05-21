@@ -1,4 +1,9 @@
-<h1>ファイナンシャルプランナーに相談しよう!!</h1>
-
-<%= link_to "アカウントを作成する", signup_path %>
-<%= link_to "ログインする", login_path %>
+<% if logged_in? %>
+  <% if current_user.fp %>
+    <%= render 'pages/fp_user_logged_in' %>
+  <% else %>
+    <%= render 'pages/user_logged_in' %>
+  <% end %>
+<% else %>
+  <%= render 'pages/user_not_logged_in' %>
+<% end %>
