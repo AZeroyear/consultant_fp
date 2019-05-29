@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   get '/fp-signup', to: 'users#fp_new'
   get '/timesettings', to: 'time_settings#edit'
   patch '/timesettings', to: 'time_settings#update'
+  resources :reserves, only: [:index, :create]
+  resources :consultants
 end

@@ -18,4 +18,12 @@ module SessionsHelper
     @current_user = nil
   end
 
+  def fp_user?
+    if current_user.nil?
+      false
+    else
+      current_user.fp
+    end
+  end
+
 end

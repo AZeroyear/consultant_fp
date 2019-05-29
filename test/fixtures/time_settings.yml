@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  weekly: MyString
-  interval: 1
-  start: 2019-05-19 19:59:15
-  end: 2019-05-19 19:59:15
-
-two:
-  weekly: MyString
-  interval: 1
-  start: 2019-05-19 19:59:15
-  end: 2019-05-19 19:59:15
+# one:
+#   weekly: MyString
+#   interval: 1
+#   start: 2019-05-19 19:59:15
+#   end: 2019-05-19 19:59:15
+#
+# two:
+#   weekly: MyString
+#   interval: 1
+#   start: 2019-05-19 19:59:15
+#   end: 2019-05-19 19:59:15
