@@ -1,1 +1,11 @@
 <h1>ようこそ <%= @user.name %> 様</h1>
+
+<%= link_to "ファイナンシャルプランナーへの相談を予約する", consultants_path %>
+
+<h3>確定済みの予約</h3>
+<h3><%= "#{@consultant.size}件の予約をしています。" %></h3>
+<% @consultant.each do |cos| %>
+  <%= cos.date.to_date %>
+  <%= cos.start.strftime('%H:%M') %> - <%= cos.end.strftime('%H:%M') %>
+  <%= link_to("キャンセルする", consultant_path(cos.id), method: :delete) %><br>
+<% end %>

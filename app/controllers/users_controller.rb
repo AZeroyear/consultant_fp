@@ -1,4 +1,10 @@
 class UsersController < ApplicationController
+  before_action :logged_in_user, only: [:edit, :update]
+  before_action :fp_user,     only: [:index, :fp_update]
+
+  def index
+    @users = User.all
+  end
 
   def new
     @user = User.new
@@ -28,8 +34,26 @@ class UsersController < ApplicationController
     end
   end
 
+  def fp_update
+    @user = User.find_by(email: params[:user][:email])
+    if @user.update(fp_user_params)
+      flash[:alert] = "更新されました。"
+      redirect_to "index"
+    else
+      render 'index'
+    end
+  end
+
   private
     def user_params
       params.require(:user).permit(:name, :email)
+    end
+
+    def fp_user_params
+      params.require(:user).permit(:name, :email, :fp)
+    end
+
+    def fp_user
+      redirect_to(root_url) unless current_user.fp?
     end
 end

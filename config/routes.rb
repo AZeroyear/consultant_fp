@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   post '/signup',   to: 'users#create'
   get '/edit',      to: 'users#edit'
   patch '/edit',    to: 'users#update'
+  get '/users',    to: 'users#index'
+  patch '/users',    to: 'users#fp_update'
   get '/login',     to:'sessions#new'
   post '/login',    to:'sessions#create'
   delete '/logout', to:'sessions#destroy'

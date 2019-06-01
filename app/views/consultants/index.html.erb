@@ -1,0 +1,9 @@
+<% tmp_date = nil %>
+<% @consultants.each do |reserve| %>
+  <% unless tmp_date == reserve.date.to_date %>
+    <h3><%= reserve.date.to_date.to_s %></h3>
+  <% end %>
+  <% tmp_date = reserve.date.to_date %>
+  <%= link_to("予約する", consultant_path(reserve.id)) %>
+  <%= reserve.start.strftime('%H:%M') %> - <%= reserve.end.strftime('%H:%M') %><br>
+<% end %>

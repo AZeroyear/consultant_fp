@@ -1,0 +1,5 @@
+<%= form_for @consultant do %>
+  <h2><%= @reserve.date.to_date %></h2>
+  <h3><%= @reserve.start.strftime('%H:%M') %> - <%= @reserve.end.strftime('%H:%M') %></h3>
+  <%= submit_tag "予約を確定する" %>
+<% end %>
