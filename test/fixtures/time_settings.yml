@@ -1,13 +1,43 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-# one:
-#   weekly: MyString
-#   interval: 1
-#   start: 2019-05-19 19:59:15
-#   end: 2019-05-19 19:59:15
-#
-# two:
-#   weekly: MyString
-#   interval: 1
-#   start: 2019-05-19 19:59:15
-#   end: 2019-05-19 19:59:15
+sun:
+  week: 0
+  interval: 30
+  start: "10:00"
+  end: "18:00"
+  workday: false
+mon:
+  week: 1
+  interval: 30
+  start: "10:00"
+  end: "18:00"
+  workday: true
+tue:
+  week: 2
+  interval: 30
+  start: "10:00"
+  end: "18:00"
+  workday: true
+wed:
+  week: 3
+  interval: 30
+  start: "10:00"
+  end: "18:00"
+  workday: true
+thr:
+  week: 4
+  interval: 30
+  start: "10:00"
+  end: "18:00"
+  workday: true
+fir:
+  week: 5
+  interval: 30
+  start: "10:00"
+  end: "18:00"
+  workday: true
+sat:
+  week: 6
+  interval: 30
+  start: "11:00"
+  end: "15:00"
+  workday: true

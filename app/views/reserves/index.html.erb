@@ -1,6 +1,6 @@
 <h1><%= "#{@day} (#{week @day.wday})" %></h1>
-<%= link_to "前の日  #{@day - 1}", reserves_path(date: @day - 1) %>
-<%= link_to "次の日  #{@day + 1}", reserves_path(date: @day + 1) %><br>
+<%= link_to("前の日  #{@day - 1}", reserves_path(date: @day - 1)) unless @day == Date.current %>
+<%= link_to("次の日  #{@day + 1}", reserves_path(date: @day + 1)) %><br>
 
 <%= form_for @fp_user, url: reserves_path(date: @day), method: :post do |f| %>
   <% if @set_time %>

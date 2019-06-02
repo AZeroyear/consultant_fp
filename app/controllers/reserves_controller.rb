@@ -3,7 +3,6 @@ class ReservesController < ApplicationController
   before_action :set_up
 
   def index
-
   end
 
   def create
@@ -33,7 +32,11 @@ class ReservesController < ApplicationController
     end
 
     def set_up
-      @day = params[:date] ? Date.parse(params[:date]) : Date.today
+      @day = params[:date] ? Date.parse(params[:date]) : Date.current
+      if @day < Date.current
+        @day = Date.current
+        flash[:alert] = "過去の日付は選択できません"
+      end
       @set_time = TimeSetting.set(@day)
       @fp_user = current_user
     end

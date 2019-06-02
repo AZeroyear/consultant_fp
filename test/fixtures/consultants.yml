@@ -1,11 +1,8 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  reserve_id: 1
-  fp_user_id: 1
-  user_id: 1
-
-two:
-  reserve_id: 1
-  fp_user_id: 1
-  user_id: 1
+<% 30.times do |n| %>
+consultant_<%= n %>:
+  reserve_id: <%= n %>
+  fp_user_id: 3
+  user_id:
+<% end %>

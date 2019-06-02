@@ -1,6 +1,7 @@
 class ConsultantsController < ApplicationController
+  before_action :logged_in_user
   def index
-    @consultants = Reserve.joins(:consultants).includes(:consultants).where(consultants: {user_id: nil}).order("date").order("start")
+    @consultants = Reserve.where('date >= ?', Date.current).joins(:consultants).includes(:consultants).where(consultants: {user_id: nil}).order("date").order("start")
   end
 
   def show

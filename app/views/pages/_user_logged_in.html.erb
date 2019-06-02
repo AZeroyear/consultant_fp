@@ -7,5 +7,5 @@
 <% @consultant.each do |cos| %>
   <%= cos.date.to_date %>
   <%= cos.start.strftime('%H:%M') %> - <%= cos.end.strftime('%H:%M') %>
-  <%= link_to("キャンセルする", consultant_path(cos.id), method: :delete) %><br>
+  <%= link_to("キャンセルする", consultant_path(cos.id), method: :delete) unless cos.date < Date.current %><br>
 <% end %>
