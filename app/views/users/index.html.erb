@@ -1,9 +1,9 @@
 <% @users.each do |user| %>
 <%#= render 'shared/error' %>
   <%= form_with model: user, url: users_path do |f| %>
-    <%= f.text_field :name %>
-    <%= f.text_field :email %>
-    <%= f.check_box :fp %>
+    Name: <%= f.text_field :name %>
+    Email: <%= f.text_field :email %>
+    FP user: <%= f.check_box :fp %>
     <%= submit_tag %>
   <% end %>
 <% end %>

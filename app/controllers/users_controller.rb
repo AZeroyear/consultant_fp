@@ -38,9 +38,10 @@ class UsersController < ApplicationController
     @user = User.find_by(email: params[:user][:email])
     if @user.update(fp_user_params)
       flash[:alert] = "更新されました。"
-      redirect_to "index"
+      redirect_to users_path
     else
-      render 'index'
+      flash[:alert] = "更新に失敗しました。"
+      redirect_to users_path
     end
   end
 
